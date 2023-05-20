@@ -74,6 +74,9 @@ class ChessBoard(Ui_Dialog):
             self.name = item.text()
 
     def change_board(self, item):
+        if self.status == 'chess' and isinstance(item, QtWidgets.QListWidgetItem):
+            return
+        
         if item:
             self.remember_item(item)
         try:
